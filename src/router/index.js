@@ -1,25 +1,33 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import('@/views/HomeView.vue')
   },
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import('../views/AboutView.vue')
   }
+  // { //* 代表所有主頁面下的頁面，路由錯誤都會被導向
+  //   path: '/:pathMatch(.*)*',
+  //   redirect: '/'
+  // },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    if (to.fullPath.match('/')) {
+      return {
+        top: 0 //* 切換頁面時會切換到最上面的位置
+      }
+    }
+    return {}
+  }
 })
 
 export default router
