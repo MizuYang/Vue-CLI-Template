@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <p>測試千分位：一共 {{ $thousandths(1000) }} 元</p>
+    <button type="button" class="btn btn-primary-color">測試 Bootstrap 自訂變數</button>
 
     <!-- Button trigger modal -->
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
