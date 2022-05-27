@@ -7,7 +7,7 @@ Vue CLI 環境建立模板
  - Mitt  v
  - Loading Overlay  v
  - Router 切頁面捲動 Top:0  v
- - 千分位 v
+ - 千分位轉換 v
 
 
 未建立
